@@ -1,0 +1,16 @@
+<!-- ce fichier contient toute la structure html commune à toute les pages
+les autres pages html vont heriter de cette page.
+Cette page réuni donc tout ce que les 2 pagesont en commun.
+Les autres pages (add et index) seront des pages "filles" de "layout" -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tasks</title>
+    </head>
+    <body>
+        <!-- On déclare un block nommé body -->
+        {% block body %}
+        {% endblock%}
+    </body>
+</html>

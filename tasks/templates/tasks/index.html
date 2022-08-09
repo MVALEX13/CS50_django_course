@@ -1,0 +1,21 @@
+<!-- On ne decrit que ce qui va etre différent avec cette page.
+Cette partie contient seulement ce par quoi on veut remplacer le block dans layout.html -->
+<!-- "utilise tout le contenu du fichier layout.html" -->
+{% extends "tasks/layout.html" %}
+
+<!-- "mais remplace le block body par le code ci-dessous" -->
+{% block body %}
+        <h1>Tasks</h1>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            
+            <!-- condition django pour voir si la boucle for ne contient aucune boucle -->
+            {% empty %}
+                <li> No tasks</li>
+            {% endfor %}
+        </ul>
+        <!-- link to the url called 'add', on le fait en utilisant le nom -->
+        <!-- Les noms sont tirés des noms données dans le fichier url.py ou chaque url a un nom-->
+        <a href="{% url 'tasks:add' %}"> Add a new Task</a>
+{% endblock %}

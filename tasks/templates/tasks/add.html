@@ -1,0 +1,20 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+<h1>Add task</h1>
+<form action = "{% url 'tasks:add' %}" method="post">
+    <!-- pour garantir qu'on ne puisse pas réaliser des post depuis un autre website (securite) -->
+     {% csrf_token %}
+
+    <!-- methode 1 classique -->
+    <!-- <input type="text" name="task"> -->
+
+    <!-- methode 2 avec django -->
+    {{ form }}
+
+    <input type="submit">
+</form>
+<!-- tasks a ete defini comme app_name dans le fichier urls.py -->
+<!-- means from the tasks app get the index url -->
+<a href="{% url 'tasks:index' %}">View tasks</a>
+{% endblock %}

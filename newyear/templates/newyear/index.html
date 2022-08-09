@@ -1,0 +1,20 @@
+<!-- instruction django pour charger le fichier css -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Is it New Year's?</title>
+        <!-- methode django pour ajouter fichiers -->
+        <link rel="stylesheet" href="{% static 'newyear/style.css' %}">
+    </head>
+    <body>
+        <!-- syntaxe pour conditions logiques avec django -->
+        {% if newyear %}
+            <h1>YES</h1>
+        {% else %}
+            <h1>NO</h1>
+        <!-- enfif obligatoire in end of a statement with django, comme end avec matlab -->
+        {% endif %}
+    </body>
+</html>
